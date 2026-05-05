@@ -16,11 +16,17 @@
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
+  position: relative;
   background-color: #ffffff;
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
   border-radius: 4px;
   width: 100%;
   max-width: 400px;
+}
+.modal-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .modal-overlay.is-open {
   opacity: 1;
@@ -49,6 +55,7 @@
   border-radius: 4px;
   padding-left: 40px;
   margin: 4px 0 8px 0;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-input:focus {
   border-color: #4d5ae5;
@@ -61,6 +68,7 @@
   width: 100%;
   height: 120px;
   border: 1px solid #75757580;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   resize: none;
   border-radius: 4px;
   padding: 8px 16px;
@@ -68,6 +76,10 @@
 }
 textarea::placeholder {
   color: rgba(46, 47, 66, 0.4);
+}
+.textarea:focus {
+  border-color: #4d5ae5;
+  outline: none;
 }
 .input-wrapper {
   position: relative;
@@ -77,10 +89,37 @@ textarea::placeholder {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .checkbox-block {
   margin-top: 16px;
 }
+.modal-close-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  background: rgba(231, 233, 252, 1);
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn svg {
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn:hover {
+  background: #404bbf;
+}
+.modal-close-btn:hover svg {
+  color: #ffffff;
+}
+
 .checkbox-label {
   display: flex;
   align-items: center;
@@ -102,6 +141,7 @@ textarea::placeholder {
 }
 .checkbox-custom svg {
   opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .checkbox-input:checked + .checkbox-custom svg {
   opacity: 1;
@@ -118,4 +158,27 @@ textarea::placeholder {
 }
 .checkbox-text a {
   text-decoration: underline;
+}
+.modal-btn-botttom {
+  width: 169px;
+  height: 56px;
+  border-radius: 4px;
+  background: rgba(77, 90, 229, 1);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin: 24px auto;
+  display: block;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-btn-botttom:hover,
+.modal-btn-botttom:focus {
+  background: rgba(64, 75, 191, 1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
